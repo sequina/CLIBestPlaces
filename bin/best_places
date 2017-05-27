@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require "bundler/setup"
-require "video_games"
+require "best_places"
 
 # require 'nokogiri'
 # require 'open-uri'
