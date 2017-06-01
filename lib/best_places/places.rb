@@ -1,25 +1,40 @@
-class BestPlaces::Places
-  attr_accessor :name, :population, :places
-    @places = []
+require 'nokogiri'
+require 'open-uri'
 
-  def self.list_places
-    # puts "this is inside list places"
+module BestPlaces
 
+  class Places
+    attr_accessor :name, :population, :places
 
-  end
+      def initialize
+        @places = []
+      end
 
-  # def self.array_list
-  # end
+      def scrape_places
+        doc = Nokogiri::HTML(open("https://nomadlist.com/best-cities-to-live"))
+        places = doc.search("div.text h2.itemName")
+        ranks = doc.search("div.rank")
+        places.each{|e| @places << e.text.strip}
 
-  def self.scrape_places
-    doc = Nokogiri::HTML(open("https://nomadlist.com/best-cities-to-live"))
-    places = doc.search("div.text h2.itemName").text
-    
-    @places.each_with_index do |place|
-      puts "you are now in title"
-      @places << self.scrape_places
-      puts "You Pushed Some Data to Places!"
+          @places.each do |place|
+            i = @places.index(place)
+          puts "#{ranks[i].text}. #{place}"
+        end
+      end
     end
-    # binding.pry
+
+     class CLI
+
+       def list_places
+         puts "Welcome to the best places on Earth!"
+       end
+
+       def call
+         list_places
+        #  scrape_places
+         menu
+         goodbye
+       end
+
+     end
   end
-end
