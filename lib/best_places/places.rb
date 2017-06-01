@@ -3,7 +3,7 @@ require 'open-uri'
 
 module BestPlaces
 
-  class Places
+  class Places < CLI
     attr_accessor :name, :population, :places
 
       def initialize
@@ -31,7 +31,7 @@ module BestPlaces
 
        def call
          list_places
-        #  scrape_places
+         scrape_places
          menu
          goodbye
        end
