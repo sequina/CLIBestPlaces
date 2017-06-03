@@ -47,23 +47,63 @@ module BestPlaces
             # puts "#{ranks[i].text}. #{@@air_quality}"
           end
         end
+      #Places Class End
       end
 
-      # def scrape_attributes
-      #   doc = Nokogiri::HTML(open("https://nomadlist.com/best-cities-to-live"))
+    class CLI < Places
+
+      def list_places
+        puts "Welcome to the best places on Earth!"
+      end
+
+      def call
+        list_places
+        scrape_places
+        menu
+        goodbye
+      end
 
 
-     class CLI
+      def menu
+        input = nil
+        puts "Choose a Place to see its Air Quality by entering a Number : "
+        puts "Type exit to exit the program"
 
-       def list_places
-         puts "Welcome to the best places on Earth!"
-       end
+          while input != "exit"
+            input = gets.strip.downcase
+            case input
+              when "1"
+                puts "#{@@air_quality[0]}"
+              when "2"
+                puts "#{@@air_quality[1]}"
+              when "3"
+                puts "#{@@air_quality[2]}"
+              when "4"
+                puts "#{@@air_quality[3]}"
+              when "5"
+                puts "#{@@air_quality[4]}"
+              when "6"
+                puts "#{@@air_quality[5]}"
+              when "7"
+                puts "#{@@air_quality[6]}"
+              when "8"
+                puts "#{@@air_quality[7]}"
+              when "9"
+                puts "#{@@air_quality[8]}"
+              when "10"
+                puts "#{@@air_quality[9]}"
 
-       def call
-         list_places
-         scrape_places
-         menu
-         goodbye
-       end
-     end
-  end
+
+              else
+                puts "Please choose a number from the list above"
+              end
+            end
+
+            def goodbye
+              puts "See you later!"
+            end
+
+          end
+          #Menu Def End
+        end
+    end
