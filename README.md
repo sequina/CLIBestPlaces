@@ -22,7 +22,12 @@ Or install it yourself as:
 
 ## Usage
 
-Type ./bin/best_places to run the program and follow the prompts to find out what the air quality is for the best places to live! 
+First fork and clone the project from GitHub
+
+Once this is saved to your computer
+Open your command prompt
+
+Type ./bin/best_places to run the program and follow the prompts to find out what the air quality is for the best places to live!
 
 ## Development
 

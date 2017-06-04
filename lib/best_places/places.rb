@@ -54,6 +54,7 @@ module BestPlaces
 
       def list_places
         puts "Welcome to the best places on Earth!"
+        puts "Choose a Place to see its Air Quality by entering a Number : "
       end
 
       def call
@@ -63,11 +64,9 @@ module BestPlaces
         goodbye
       end
 
-
       def menu
         input = nil
-        puts "Choose a Place to see its Air Quality by entering a Number : "
-        puts "Type exit to exit the program"
+        puts "Type exit to leave the program"
 
           while input != "exit"
             input = gets.strip.downcase
@@ -92,17 +91,33 @@ module BestPlaces
                 puts "#{@@air_quality[8]}"
               when "10"
                 puts "#{@@air_quality[9]}"
-
+              when "11"
+                puts "#{@@air_quality[10]}"
+              when "12"
+                puts "#{@@air_quality[11]}"
+              when "13"
+                puts "#{@@air_quality[12]}"
+              when "14"
+                puts "#{@@air_quality[13]}"
+              when "15"
+                puts "#{@@air_quality[14]}"
+              when "16"
+                puts "#{@@air_quality[15]}"
+              when "17"
+                puts "#{@@air_quality[16]}"
+              when "18"
+                puts "#{@@air_quality[17]}"
+              when "19"
+                puts "#{@@air_quality[18]}"
 
               else
-                puts "Please choose a number from the list above"
+                return "Please choose a number from the list above"
               end
             end
+          end
 
-            def goodbye
-              puts "See you later!"
-            end
-
+          def goodbye
+            puts "See you later!"
           end
           #Menu Def End
         end
